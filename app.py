@@ -75,7 +75,7 @@ st.markdown(
         box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
     }
     .stButton button {
-        background-color: #4CAF50;
+        background-color: #006400;
         color: white;
         font-size: 16px;
         padding: 10px 20px;
