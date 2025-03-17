@@ -17,14 +17,13 @@ import warnings
 warnings.filterwarnings('ignore')
 
 # Set page config FIRST
-
+# st.set_page_config(page_title="Diabetes Prediction", layout="wide")
 
 # Load the dataset
 @st.cache_data
 def load_data():
     df = pd.read_csv("diabetes.csv")
     return df
-
 
 df = load_data()
 
@@ -69,8 +68,9 @@ st.markdown(
         font-family: 'Arial', sans-serif;
     }
     .stSidebar {
-        background-color: #4CAF50;
+        background-color: #ffffff;
         padding: 20px;
+        color: black;
         border-radius: 10px;
         box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
     }
@@ -106,11 +106,16 @@ st.markdown(
         color: #4CAF50;
         font-weight: bold;
     }
+    /* Custom CSS for sidebar input labels */
+    .stSidebar label {
+        color: #4CAF50 !important;
+        font-weight: bold;
+    }
     </style>
     """,
     unsafe_allow_html=True
 )
-# ffffff;
+
 # Hero Section
 st.markdown(
     """
@@ -123,17 +128,35 @@ st.markdown(
 )
 
 # Sidebar for user input
-# Sidebar for user input
 st.sidebar.header("User Input")
 st.sidebar.write("Enter patient details:")
 
 # Simulate raw patient data input
-glucose = st.sidebar.number_input("Glucose Level (mg/dL) - Blood sugar level", value=85)
-bmi = st.sidebar.number_input("BMI (kg/m²) - Body Mass Index", value=28.0)
-age = st.sidebar.number_input("Age (years) - Age of the patient", value=25)
-diabetes_pedigree = st.sidebar.number_input("Diabetes Pedigree Function (unitless) - Genetic risk score", value=0.3)
-blood_pressure = st.sidebar.number_input("Blood Pressure (mmHg) - Blood pressure level", value=70)
-pregnancies = st.sidebar.number_input("Number of Pregnancies (count) - Total pregnancies", value=1)
+glucose = st.sidebar.number_input(
+    "Glucose Level (mg/dL) - Blood sugar level after fasting", 
+    value=85
+)
+bmi = st.sidebar.number_input(
+    "BMI (kg/m²) - Body Mass Index, a measure of body fat", 
+    value=28.0
+)
+age = st.sidebar.number_input(
+    "Age (years) - Age of the patient", 
+    value=25
+)
+diabetes_pedigree = st.sidebar.number_input(
+    "Diabetes Pedigree Function - Genetic influence of diabetes", 
+    value=0.3
+)
+blood_pressure = st.sidebar.number_input(
+    "Blood Pressure (mmHg) - Diastolic blood pressure", 
+    value=70
+)
+pregnancies = st.sidebar.number_input(
+    "Number of Pregnancies - Total number of pregnancies", 
+    value=1
+)
+
 # Add an "Enter" button to trigger prediction
 if st.sidebar.button("Predict Diabetes"):
     # Create raw data DataFrame
