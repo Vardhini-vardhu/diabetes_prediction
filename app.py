@@ -1,4 +1,4 @@
-is it possible to make the below coding to be directly execute in website if it is not running on visual studio everytime we need the website import streamlit as st
+
 import pandas as pd
 import numpy as np
 import plotly.express as px
