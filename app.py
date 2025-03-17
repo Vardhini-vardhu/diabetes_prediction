@@ -1,4 +1,5 @@
-
+import streamlit as st
+st.set_page_config(page_title="Diabetes Prediction", layout="wide")
 import pandas as pd
 import numpy as np
 import plotly.express as px
@@ -16,13 +17,14 @@ import warnings
 warnings.filterwarnings('ignore')
 
 # Set page config FIRST
-st.set_page_config(page_title="Diabetes Prediction", layout="wide")
+
 
 # Load the dataset
 @st.cache_data
 def load_data():
     df = pd.read_csv("diabetes.csv")
     return df
+
 
 df = load_data()
 
