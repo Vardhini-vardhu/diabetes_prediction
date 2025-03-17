@@ -72,7 +72,7 @@ st.markdown(
         padding: 20px;
         color: black;
         border-radius: 10px;
-        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        box-shadow: 140px 98px 61px rgb(140, 98, 61);
     }
     .stButton button {
         background-color: #006400;
@@ -90,7 +90,7 @@ st.markdown(
         background-color: #ffffff;
         padding: 20px;
         border-radius: 10px;
-        box-shadow: 140px 98px 61px rgb(140, 98, 61);
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
         margin-bottom: 20px;
     }
     .card h3 {
