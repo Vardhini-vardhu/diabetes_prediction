@@ -16,8 +16,6 @@ from tabulate import tabulate
 import warnings
 warnings.filterwarnings('ignore')
 
-# Set page config FIRST
-# st.set_page_config(page_title="Diabetes Prediction", layout="wide")
 
 # Load the dataset
 @st.cache_data
